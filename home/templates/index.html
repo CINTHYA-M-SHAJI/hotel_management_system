@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hotel Management System</title>
+    {% load static %}
+    <style>
+        body{
+            background-image: url('{%static "images/bg2.jpg" %}'); 
+            background-repeat:no-repeat;
+            background-size:cover;
+        }
+    </style>
+    
+</head>
+<body>
+    <form align="center">
+        <h1><center>HOTEL MANAGEMENT SYSTEM</center></h1>
+        
+        <button formaction="login.php"> Login</a></button>
+        <button formaction="signup.php" >Sign Up</a></button><br>
+    <label>From:</label>
+    <input type="date" required>&nbsp;
+    <label>To:</label>
+    <input type="date" required>&nbsp;
+    <label>Room</label>
+    <select name="room_type">
+        <option value="null">----</option>
+        <option value="Deluxe room">Deluxe Room</option>
+        <option value="single room">Single Room</option>
+        <option value="double room">Double Room</option>
+    </select>
+
+    <button><input type="submit" value="Submit"></button>
+      
+    </form>
+</body>
+</html>
