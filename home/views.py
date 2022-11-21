@@ -1,23 +1,23 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from .models import User
-from .models import Hotel
-from .models import rooms
-from .models import Booking
 # Create your views here.
+from pathlib import Path
+from django.shortcuts import render
 
-def home_view(request):
-    # member=User.objects.all()
-    return render(request,'index.html')
+import home
+from HMS.settings import BASE_DIR
 
-def home_register(request):
-    member=User.objects.all()
-    return render(request,'registration.html',{'members': member})
 
-def home_login(request):
-    return render(request, 'login.html')
+def index(request):
+    return render(request, "index.html")
 
-def insert(request):
-    members=User(name=request.POST['name'], email=request.POST['email'], password=request.POST['password'], address=request.POST['address'])
-    members.save()
-    return redirect('/')
+
+def result(request):
+    import pickle
+    BASE_DIR = str(Path(__file__).resolve().parent.parent)
+    with open(BASE_DIR+'/home/model_pkl', 'rb') as f:
+        lr = pickle.load(f)
+    room_type = float(request.GET['room_type'])
+    hotel_type = float(request.GET['hotel_type'])
+    z = [room_type, hotel_type]
+    out = lr.predict([z]).astype(int)
+    price = 'The predicted price is '+ str(out[0])
+    return render(request, "result.html", {'result_price':price})

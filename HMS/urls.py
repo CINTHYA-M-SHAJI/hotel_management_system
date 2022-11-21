@@ -1,4 +1,4 @@
-"""hms URL Configuration
+"""HMS URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -14,15 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-
-from home import views
-
+from django.urls import path, include
 
 urlpatterns = [
-     path('', views.home_view, name='index'),
-      path('', views.home_register, name='index'),
-#    path('home', include('home.urls')),
-     path('',views.home_login, name='login'),
-     path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
+path('', include('home.urls')),
 ]

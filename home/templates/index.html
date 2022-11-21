@@ -6,33 +6,52 @@
     {% load static %}
     <style>
         body{
-            background-image: url('{%static "images/bg2.jpg" %}'); 
+            background-image: url('{%static "images/bg2.jpg" %}');
             background-repeat:no-repeat;
             background-size:cover;
         }
     </style>
-    
+
 </head>
 <body>
-    <form align="center">
-        <h1><center>HOTEL MANAGEMENT SYSTEM</center></h1>
-        
-        <button formaction="login.php"> Login</a></button>
-        <button formaction="signup.php" >Sign Up</a></button><br>
-    <label>From:</label>
-    <input type="date" required>&nbsp;
-    <label>To:</label>
-    <input type="date" required>&nbsp;
-    <label>Room</label>
-    <select name="room_type">
-        <option value="null">----</option>
-        <option value="Deluxe room">Deluxe Room</option>
-        <option value="single room">Single Room</option>
-        <option value="double room">Double Room</option>
-    </select>
+    <form align="center" action="result">
+        <h1>HOTEL MANAGEMENT SYSTEM</h1>
 
-    <button><input type="submit" value="Submit"></button>
-      
+        <button formaction="login.php"> Login</button>
+        <button formaction="signup.php" >Sign Up</button><br>
+
+
+        <label>From: </label>
+            <input type="date" required>&nbsp;
+
+
+        <label>To:</label>
+            <input type="date" required>
+
+
+
+        <label for="hotel">Hotel</label>
+            <select name="hotel_type" id="hotel">
+                <option value="null">----</option>
+                <option value="0">1 star</option>
+                <option value="1">2 star</option>
+                <option value="2">3 star</option>
+                <option value="3">4 star</option>
+                <option value="4">5 star</option>
+            </select>
+
+
+
+        <label for="room">Room</label>
+            <select name="room_type" id="room">
+                <option value="null">----</option>
+                <option value="0">Deluxe Room</option>
+                <option value="1">Single Room</option>
+                <option value="2">Double Room</option>
+            </select>
+
+        <button><input type="submit" value="Submit"></button>
+
     </form>
 </body>
 </html>
