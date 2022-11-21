@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hotel Management System</title>
+    {% load static %}
+    <style>
+        body{
+            background-image: url('{%static "images/bg2.jpg" %}');
+            background-repeat:no-repeat;
+            background-size:cover;
+        }
+    </style>
+
+</head>
+<body>
+    <form align="center" action="result">
+        <h1>HOTEL MANAGEMENT SYSTEM</h1>
+
+        <button> Login</button>
+        <button>Sign Up</button><br>
+
+
+        <label>From: </label>
+            <input type="date" required>&nbsp;
+
+
+        <label>To:</label>
+            <input type="date" required>
+
+
+
+        <label for="hotel">Hotel</label>
+            <select name="hotel_type" id="hotel">
+                <option value="null">----</option>
+                <option value="0">1 star</option>
+                <option value="1">2 star</option>
+                <option value="2">3 star</option>
+                <option value="3">4 star</option>
+                <option value="4">5 star</option>
+            </select>
+
+
+
+        <label for="room">Room</label>
+            <select name="room_type" id="room">
+                <option value="null">----</option>
+                <option value="0">Deluxe Room</option>
+                <option value="1">Single Room</option>
+                <option value="2">Double Room</option>
+            </select>
+
+        <button><input type="submit" value="Submit"></button>
+
+    </form>
+
+    <div style="text-align: center;"><h1>{{ result_price }}</h1></div>
+</body>
+</html>
