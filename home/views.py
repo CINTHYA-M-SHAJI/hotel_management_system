@@ -7,17 +7,17 @@ from .models import Booking
 # Create your views here.
 
 def home_view(request):
-    # member=User.objects.all()
     return render(request,'index.html')
 
-def home_register(request):
-    member=User.objects.all()
-    return render(request,'registration.html',{'members': member})
 
-def home_login(request):
-    return render(request, 'login.html')
+def home_about(request):
+    return render(request, 'about.html')
 
-def insert(request):
-    members=User(name=request.POST['name'], email=request.POST['email'], password=request.POST['password'], address=request.POST['address'])
-    members.save()
-    return redirect('/')
+
+def home_services(request):
+    return render(request, 'services.html')
+
+def home_contact(request):
+    return render(request, 'contact.html')
+
+
