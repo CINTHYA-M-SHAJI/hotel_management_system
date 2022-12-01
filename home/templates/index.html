@@ -66,7 +66,7 @@ Author URL: http://w3layouts.com
                 <div class="form-right">
                     <div class="form-inner-cont">
                         <h3 class="title-small">Check Availability</h3>
-                        <form action="search-results.html" method="post" class="signin-form">
+                        <form action="result" method="post" class="signin-form">   {% csrf_token %}
                             <div class="row book-form">
                                 <div class="form-input col-md-4 col-sm-6 mt-3">
                                     <label>Check-in Date</label>
@@ -89,13 +89,13 @@ Author URL: http://w3layouts.com
 				</div>
                                 <div class="form-input col-md-4 col-sm-6 mt-3">
                                     <label>Hotel type</label>
-				                <select class="selectpicker">
-			                       <option>------</option>-->
-                                   <option>1-star</option>
-                                   <option>2-star</option>
-                                   <option>3-star</option>
-                                   <option>4-star</option>
-	                               <option>5-star</option>
+				                <select class="selectpicker" name="hotel_type">
+                                    <option value="null">----</option>
+                                    <option value="0">1 star</option>
+                                    <option value="1">2 star</option>
+                                    <option value="2">3 star</option>
+                                    <option value="3">4 star</option>
+                                    <option value="4">5 star</option>
                                 </select>
 				   
                                 </div>
@@ -103,13 +103,14 @@ Author URL: http://w3layouts.com
                                 <div class="form-input col-md-4 col-sm-6 mt-3">
                         
                                     <label>Room Category</label>
-                                    <select class="selectpicker">
-					<option>-----------</option>
-                                        <option>Single Room</option>
-                                        <option>Deluxe Room</option>
-                                        <option>Luxary Room</option>
-                                        <option>Studio Room</option>
-                                        <option>Normal Room</option>
+                                    <select class="selectpicker" name="room_type">
+                                            <option value="null">----</option>
+                                            <option value="0">Deluxe</option>
+                                            <option value="1">Luxury</option>
+                                            <option value="2">Normal</option>
+                                            <option value="3">Studio</option>
+                                            <option value="4">Studio</option>
+
                                     </select>
 
                                 </div>
@@ -132,7 +133,7 @@ Author URL: http://w3layouts.com
     </div>
 </section>
 <div class="hello-class">
-	<center><h1>{{ prediction_result }}</h1>
+    <div style="text-align: center;"><h1>{{ prediction_result }}</h1></div>
 </div>
 <!-- //w3l-header -->
  <!-- main-slider -->
